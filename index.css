@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  width: 100%;
+  height: 100vh;
+  border: 0.08rem solid #2f528f;
+  background-color: #e7e6e6;
+}
+.body .title {
+  width: 100%;
+  height: 1.4rem;
+  border-bottom: 0.08rem solid #2f528f;
+  background-color: #dae3f3;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.body .title h1 {
+  font-size: 0.5rem;
+}
+.body .btns {
+  width: 100%;
+  height: 2rem;
+  padding: 0 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.body .btns .btn {
+  width: 2.4rem;
+  height: 1.2rem;
+  background-color: #afabab;
+  border-radius: 10%;
+  border: 0.05rem solid #2f528f;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.6rem;
+}
+.body .btns .atThis {
+  background-color: #b4c7e7;
+  color: #000;
+}
+.body .inputsArea {
+  width: 100%;
+  padding: 0 0.2rem;
+}
+.body .inputsArea div {
+  margin-top: 0.8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+}
+.body .inputsArea div input {
+  width: 3rem;
+  height: 1.2rem;
+  border: 2px solid #2f528f;
+  border-radius: 10px;
+  font-size: 22px;
+  padding: 0.1rem;
+  font-weight: 500;
+  text-align: center;
+  outline-style: none;
+  background-color: #d0cece;
+}
+.body .imgs {
+  margin-top: 1rem;
+  width: calc(100% - 0.16rem);
+  height: 4rem;
+  position: absolute;
+  bottom: 0.2rem;
+  padding: 0.1rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  filter: blur(2px);
+}
+.body .imgs img {
+  width: 100%;
+}

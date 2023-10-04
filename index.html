@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js"></script>
+    <script src="./jQuery.js"></script>
+  </head>
+  <body>
+    <div class="body">
+      <div class="title">
+        <h1>电动车续航里程计算</h1>
+      </div>
+
+      <div class="btns">
+        <div class="btn atThis" type="1">热泵</div>
+        <div class="btn" type="0">加热电</div>
+      </div>
+
+      <div class="inputsArea">
+        <div>
+          <span id="type">COP</span>= <input type="number" name="userInput" />
+        </div>
+        <div>
+          <span>续航里程</span>=<input type="text" readonly name="result" />KM
+        </div>
+      </div>
+
+      <div class="imgs">
+        <img src="./imgs/70e2bfd745b12fb60baa0d2d72e0ca5.jpg" alt="" />
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        let type = 1;
+        $(".btns").delegate(".btn", "click", function () {
+          $(this).addClass("atThis").siblings().removeClass("atThis");
+          type = $(this).attr("type");
+          if (type == 1) {
+            $("#type").text("COP");
+          } else if (type == 0) {
+            $("#type").text("电加热效率");
+          }
+
+          $('input[name="userInput"]').val("");
+          $("input[name='result']").val("");
+        });
+
+        function count(data) {
+          let range_sta = 525;
+          let power = 70;
+          let velocity = 50;
+          let Q = 2.5;
+
+          let x = power / (power / range_sta + Q / data / velocity);
+          return x;
+        }
+
+        $('input[name="userInput"]').on("input", function () {
+          let data = $('input[name="userInput"]').val();
+          let v = count(data);
+
+          $("input[name='result']").val(Math.trunc(v));
+        });
+      });
+    </script>
+  </body>
+</html>
